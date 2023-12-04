@@ -34,8 +34,13 @@ def scan_ip(ip_address):
             try:
                 response = requests.get(url,verify=False,timeout=HTTP_TIMEOUT)
                 if response.status_code == 401:
-                    print(f"-----> ADCS FOUND on IP {ip_address} and port {port} !!")
-                    ADCS_IP.append(url)
+                	url_proof = url + 'a'
+                	response_proof = requests.get(url_proof,verify=False,timeout=HTTP_TIMEOUT)
+                	if response_proof.status_code == 401:
+                		print(f"-> {ip_address} --> Port {port} open but no ADCS found")
+                	else:
+                    	print(f"-----> ADCS FOUND on IP {ip_address} and port {port} !!")
+                    	ADCS_IP.append(url)
                 else :
                     print(f"-> {ip_address} --> Port {port} open but no ADCS found")
             except requests.exceptions.RequestException as e:
