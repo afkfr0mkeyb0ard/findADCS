@@ -7,6 +7,13 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 import urllib3
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
+if len(sys.argv) <= 1 :
+    print("[!] No parameter found. Aborting.")
+    print("[!] Please provide an IP range or file.")
+    print("[EXAMPLE] > python3 findADCS.py 192.168.0.0/24")
+    print("[EXAMPLE] > python3 findADCS.py 192.168.0.123")
+    print("[EXAMPLE] > python3 findADCS.py IPS.txt")
+    sys.exit()
 arg = sys.argv[-1]
 print("*** Scanning range " + arg + " ***")
 ports = [80, 443]
@@ -34,13 +41,13 @@ def scan_ip(ip_address):
             try:
                 response = requests.get(url,verify=False,timeout=HTTP_TIMEOUT)
                 if response.status_code == 401:
-                	url_proof = url + 'a'
-                	response_proof = requests.get(url_proof,verify=False,timeout=HTTP_TIMEOUT)
-                	if response_proof.status_code == 401:
-                		print(f"-> {ip_address} --> Port {port} open but no ADCS found")
-                	else:
-                    	print(f"-----> ADCS FOUND on IP {ip_address} and port {port} !!")
-                    	ADCS_IP.append(url)
+                    url_proof = url + 'a'
+                    response_proof = requests.get(url_proof,verify=False,timeout=HTTP_TIMEOUT)
+                    if response_proof.status_code == 401:
+                    	print(f"-> {ip_address} --> Port {port} open but no ADCS found")
+                    else:
+                        print(f"-----> ADCS FOUND on IP {ip_address} and port {port} !!")
+                        ADCS_IP.append(url)
                 else :
                     print(f"-> {ip_address} --> Port {port} open but no ADCS found")
             except requests.exceptions.RequestException as e:
