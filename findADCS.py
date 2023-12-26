@@ -46,7 +46,7 @@ def scan_ip(ip_address):
                     if response_proof.status_code == 401:
                     	print(f"-> {ip_address} --> Port {port} open but no ADCS found")
                     else:
-                        print(f"-----> ADCS FOUND on IP {ip_address} and port {port} !!")
+                        print(f"-----> ADCS FOUND on {ip_address}:{port} !!")
                         ADCS_IP.append(url)
                 else :
                     print(f"-> {ip_address} --> Port {port} open but no ADCS found")
