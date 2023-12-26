@@ -40,7 +40,7 @@ def scan_ip(ip_address):
                 url = f"https://{ip_address}/certsrv/certfnsh.asp"
             try:
                 response = requests.get(url,verify=False,timeout=HTTP_TIMEOUT)
-                if response.status_code == 401:
+                if response.status_code == 401 or response.status_code == 200 :
                     url_proof = url + 'a'
                     response_proof = requests.get(url_proof,verify=False,timeout=HTTP_TIMEOUT)
                     if response_proof.status_code == 401:
