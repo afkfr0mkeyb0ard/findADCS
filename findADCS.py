@@ -43,11 +43,11 @@ def scan_ip(ip_address):
                 if response.status_code == 401 or response.status_code == 200 :
                     url_proof = url.replace("/certsrv/certfnsh.asp","/certsrtest")
                     response_proof = requests.get(url_proof,verify=False,timeout=HTTP_TIMEOUT)
-                    if response_proof.status_code == 401:
-                    	print(f"-> {ip_address} --> Port {port} open but no ADCS found")
-                    else:
+                    if response_proof.status_code == 404:
                         print(f"-----> ADCS FOUND on http://{ip_address}:{port}/certsrv/certfnsh.asp !!")
                         ADCS_IP.append(url)
+                    else:
+                    	print(f"-> {ip_address} --> Port {port} open but no ADCS found")
                 else :
                     print(f"-> {ip_address} --> Port {port} open but no ADCS found")
             except requests.exceptions.RequestException as e:
