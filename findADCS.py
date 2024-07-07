@@ -14,7 +14,7 @@ if len(sys.argv) <= 1 :
     print("[EXAMPLE] > python3 findADCS.py 192.168.0.123")
     print("[EXAMPLE] > python3 findADCS.py IPS.txt")
     sys.exit()
-arg = sys.argv[-1]
+arg = sys.argv[1]
 print("*** Scanning range " + arg + " ***")
 ports = [80, 443]
 
