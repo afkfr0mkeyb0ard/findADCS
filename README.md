@@ -1,5 +1,5 @@
 # Description
-Python scripts to find ADCS servers on a network
+Python scripts to find ADCS servers on a network without any credentials.
 
 ## 1. Using web exposure
 ADCS may expose Web page for cert enrollment. By scanning the Web ports we can find out the ADCS IP:
