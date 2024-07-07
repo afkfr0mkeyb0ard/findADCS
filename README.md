@@ -1,5 +1,11 @@
 # Description
 Python scripts to find ADCS servers on a network without any credentials.
+Clone and install the requirements:
+```
+$ git clone https://github.com/afkfr0mkeyb0ard/findADCS.git
+$ cd findADCS
+$ python3 -m pip install -r requirements.txt
+```
 
 ## 1. Using web exposure
 ADCS may expose Web page for cert enrollment. By scanning the Web ports we can find out the ADCS IP:
