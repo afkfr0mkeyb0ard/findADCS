@@ -5,6 +5,9 @@ Clone and install the requirements:
 $ git clone https://github.com/afkfr0mkeyb0ard/findADCS.git
 $ cd findADCS
 $ python3 -m pip install -r requirements.txt
+
+$ python3 scanWeb.py TARGET
+$ python3 scanCerts.py TARGET
 ```
 
 ## 1. Using web exposure
