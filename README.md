@@ -10,7 +10,7 @@ $ python3 -m pip install -r requirements.txt
 ## 1. Using web exposure
 ADCS may expose Web page for cert enrollment. By scanning the Web ports we can find out the ADCS IP:
 
-    $ python3 scanWeb.py <TARGET>
+    $ python3 scanWeb.py TARGET
 
 **TARGET** *can be a single IP, a file containing IP or a network*
 
@@ -29,7 +29,7 @@ By default, the script scans ports 80 and 443 but you can change it in the scrip
 Among the exposed services using SSL/TLS, some may have an internal Cert issuer, which is probably the ADCS server.
 This script lists the issuers found among the SSL certs:
 
-    $ python3 scanCerts.py <TARGET>
+    $ python3 scanCerts.py TARGET
 
 **TARGET** *can be a single IP, a file containing IP or a network*
 
