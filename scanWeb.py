@@ -10,9 +10,9 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 if len(sys.argv) <= 1 :
     print("[!] No parameter found. Aborting.")
     print("[!] Please provide an IP range or file.")
-    print("[EXAMPLE] > python3 findADCS.py 192.168.0.0/24")
-    print("[EXAMPLE] > python3 findADCS.py 192.168.0.123")
-    print("[EXAMPLE] > python3 findADCS.py IPS.txt")
+    print("[EXAMPLE] > python3 scanWeb.py 192.168.0.0/24")
+    print("[EXAMPLE] > python3 scanWeb.py 192.168.0.123")
+    print("[EXAMPLE] > python3 scanWeb.py IPS.txt")
     sys.exit()
 arg = sys.argv[1]
 print("*** Scanning range " + arg + " ***")
