@@ -13,9 +13,9 @@ VERBOSE = False     # False : TO DISPLAY ONLY OPEN PORTS
 if len(sys.argv) <= 1 :
     print("[!] No parameter found. Aborting.")
     print("[!] Please provide an IP range or file.")
-    print("[EXAMPLE] > python3 getCertIssuers.py 192.168.0.0/24")
-    print("[EXAMPLE] > python3 getCertIssuers.py 192.168.0.123")
-    print("[EXAMPLE] > python3 getCertIssuers.py IPS.txt")
+    print("[EXAMPLE] > python3 scanCerts.py 192.168.0.0/24")
+    print("[EXAMPLE] > python3 scanCerts.py 192.168.0.123")
+    print("[EXAMPLE] > python3 scanCerts.py IPS.txt")
     sys.exit()
     
 arg = sys.argv[1]
