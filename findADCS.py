@@ -74,8 +74,6 @@ except ValueError:
                 ip_addresses = [line.strip() for line in f]
                 with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
                     results = executor.map(scan_ip, ip_addresses)
-                    for f in as_completed(results):
-                        pass
         except FileNotFoundError:
             print(f"{arg} is not a valid IP address, network in CIDR notation, or file")
             print("Aborting...")
