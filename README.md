@@ -46,4 +46,4 @@ This script lists the issuers found among the SSL certs:
 #### Scanning a network:
     $ python3 scanCerts.py 10.10.10.0/24
 
-By default, the script scans ports 443,636 and 8443 but you can change it in the script.
+By default, the script scans ports 443, 636 and 8443 but you can change it in the script.
