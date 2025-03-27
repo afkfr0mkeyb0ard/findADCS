@@ -7,7 +7,10 @@ $ git clone https://github.com/afkfr0mkeyb0ard/findADCS.git
 $ cd findADCS
 $ python3 -m pip install -r requirements.txt
 
+# Scan the web services to find ADCS
 $ python3 scanWeb.py TARGET
+
+# Scan the TLS certificates to find ADCS
 $ python3 scanCerts.py TARGET
 ```
 
